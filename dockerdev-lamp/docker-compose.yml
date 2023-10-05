@@ -1,0 +1,84 @@
+version: '3'
+networks:
+  # Default Network ------------------------------------------
+  lde-network:
+    ipam:
+      config:
+        - subnet: 192.168.103.0/24
+
+services:
+  # Apache ---------------------------------------------------
+  apache:
+    container_name: apache
+    hostname: apache
+    restart: ${DOCKER_RESTART}
+    build:
+      context: ./apache
+      dockerfile: ./Dockerfile
+      args:
+        - EXTRA_CMDS=${EXTRA_CMDS_APACHE}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./apache/sites:/usr/local/apache2/conf/sites:ro
+      - ${DOCUMENTROOT}:/var/www/html:delegated
+    env_file:
+      - .env
+    networks:
+      lde-network:
+        ipv4_address: 192.168.103.100
+
+  # Mailpit ---------------------------------------------------
+  mailpit:
+    container_name: mailpit
+    hostname: mailpit
+    restart: ${DOCKER_RESTART}
+    image: axllent/mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      lde-network:
+
+  # MySQL ---------------------------------------------------
+  mysql:
+    container_name: mysql
+    hostname: mysql
+    restart: ${DOCKER_RESTART}
+    build:
+      context: ./mysql
+      dockerfile: ./Dockerfile
+      args:
+        - EXTRA_CMDS=${EXTRA_CMDS_MYSQL}
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    command: mysqld --sql_mode=""
+    networks:
+      lde-network:
+
+  # PHP 8.2 ---------------------------------------------------
+  php82-fpm:
+    container_name: php82
+    hostname: php82
+    build:
+      context: ./php
+      dockerfile: ./82/Dockerfile
+      args:
+        - EXTRA_CMDS=${EXTRA_CMDS_PHP82}
+        - CUSTOM_USER_NAME=${CUSTOM_USER_NAME}
+        - CUSTOM_UID=${CUSTOM_UID}
+        - CUSTOM_GID=${CUSTOM_GID}
+    ports:
+      - "3000:3000" # Browser Sync
+      - "3001:3001" # Browser Sync UI
+    restart: ${DOCKER_RESTART}
+    volumes:
+      - ${DOCUMENTROOT}:/var/www/html:delegated
+    networks:
+      lde-network:
+    user: ${CUSTOM_UID}:${CUSTOM_GID}

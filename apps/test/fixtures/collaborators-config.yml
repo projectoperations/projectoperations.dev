@@ -1,0 +1,9 @@
+collaborators:
+  - username: bkeepers
+    permission: push
+
+  - username: octokit-bot
+    permission: triage
+
+  - username: hubot
+    permission: pull
