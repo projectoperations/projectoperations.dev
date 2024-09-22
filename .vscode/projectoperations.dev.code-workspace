@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "linux-system-dev",
+			"path": "../linux-system-dev"
+		}
+	],
+	"settings": {}
+}
