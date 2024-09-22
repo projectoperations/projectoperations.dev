@@ -1,0 +1,72 @@
+# Default log files, DB, archives, etc.
+*.log
+*.sql
+*.zip
+*.sqlite
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.
+.php-ini
+.php-version
+.user.ini
+
+# WP-CLI deploy tool
+deploy/**
+/wp-cli.yml
+
+# Google verification files
+*google*.html
+
+# Development and local specific files and dirs
+.cache/
+s/**
+.idea/
+.DS_Store
+wp-cli.phar
+**/.vscode/**
+*.map
+.env
+Makefile
+docker-compose.yml
+
+# WordPress uploads media files, cache, plugins for staging
+**/duplicator/**
+**/all-in-one-wp-migration/**
+**/backups-dup-pro/**
+**/uploads-by-proxy/**
+**/query-monitor/**
+**/wp-staging/**
+**/ai1wm-backups/**
+**/wp-cli-login-server/**
+
+wp-content/languages/**
+wp-content/cache/**
+wp-content/backups/**
+wp-content/reports/**
+wp-content/uploads/**
+wp-content/wflogs/**
+wp-content/plugins/*.php
+wp-content/themes/*.php
+wp-content/object-cache.php
+wp-content/advanced-cache.php
+wp-content/w3tc-config/**
+sites/
+
+# CMS configuration files and server
+/wp-config.php
+/.htaccess
+/.htaccess*
+**/bower_components/**
+**/node_modules/**
+
+# Useless and secific stuff
+
+/wp-content/db.php
+.well-known
+/wp-content/wp-cloudflare-super-page-cache
+Comment

@@ -1,0 +1,153 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+	"customizations": {
+		"vscode": {
+        "dockerComposeFile": [
+        "../docker/docker-compose.yml",
+        "../docker/docker-compose.override.yml"
+    ],
+       "service": "code",
+       "workspaceFolder": "/workspace",
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"python.defaultInterpreterPath": "/usr/local/bin/python",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+		"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+	},
+
+			"extensions": [
+				"mads-hartmann.bash-ide-vscode",
+				"dbaeumer.vscode-eslint",
+				"streetsidesoftware.code-spell-checker",
+				"ms-dotnettools.vscode-dotnet-runtime",
+				"vscode-icons-team.vscode-icons",
+				"GitHub.vscode-pull-request-github",
+				"bobmagicii.dashyeah",
+				"ms-vscode-remote.remote-wsl",
+				"Memphis335.ajax-snippets",
+				"vscode-icons-team.vscode-icons",
+				"folke.vscode-monorepo-workspace",
+				"emmanuelbeziat.vscode-great-icons",
+				"bajdzis.vscode-database",
+				"bajdzis.vscode-database",
+				"formulahendry.docker-explorer",
+				"Zim.vsc-dockerZim.vsc-docker",
+				"ms-azuretools.vscode-docker",
+				"ms-vscode-remote.remote-containers",
+				"TqrHsn.vscode-docker-registry-explorer",
+				"haranjackson.vscode-docker-ipython",
+				"QuentinGruber.dockerfiletemplate",
+				"delgee.sld-docker-builder",
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"BharathDevalla.gh-deploy",
+				"XuangeAha.vsmarketplace-badges",
+				"bobmagicii.dashyeah",
+				"TqrHsn.vscode-docker-registry-explorer",
+				"raits.shared-extensions",
+				"m365pnp.viva-connections-toolkit",
+				"AlexanderTatarnikov.spcopy",
+				"SiteGo.spgo",
+				"SteveCurran.spremoteapi",
+				"adamwojcikit.pnp-powershell-extension",
+				"adamwojcikit.cli-for-microsoft-365-extension",
+				"spiritous.spflash",
+				"SharepointEmbedded.ms-sharepoint-embedded-vscode-extension",
+				"s-kainet.sharepoint-typed-item",
+				"dreamcode.spfxresources",
+				"bierner.markdown-checkbox",
+				"xpol.extra-markdown-plugins",
+				"TeamsDevApp.ms-teams-vscode-extension",
+				"jeppeandersen.vstsbuildstatus",
+				"rfverbruggen.azdo-teammembers",
+				"Alotobots5152.alotobotspack",
+				"lucasprag.teamdocs",
+				"golang.Go",
+				"argutec.argutec-azure-repos",
+				"marp-team.marp-vscode",
+				"ms-edu.pxt-vscode-web",
+				"TylerLeonhardt.msft-todo-unofficial",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-mssql.mssql",
+				"patridgedev.learn-module-creator",
+				"ms-vscode-remote.remote-wsl",
+				"ms-python.isort",
+				"zetta.qsharp-extensionpack",
+				"ms-vscode.live-server",
+				"ms-python.python",
+				"ms-vscode.PowerShell",
+				"ms-vscode.hexeditor",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"ms-vscode-remote.remote-ssh-edit",
+				"msjsdiag.vscode-react-native",
+				"ms-vscode-remote.remote-ssh",
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"ms-vscode.remote-server",
+				"ms-vscode.vscode-typescript-next",
+				"ms-azuretools.vscode-azureappservice",
+				"ms-vscode.azure-repos",
+				"ms-vscode.js-debug-nightly",
+				"vsciot-vscode.vscode-arduino",
+				"ms-mssql.sql-bindings-vscode",
+				"docsmsft.docs-authoring-pack",
+				"ms-azuretools.vscode-azurestaticwebapps",
+				"ms-iot.vscode-ros",
+				"vsciot-vscode.azure-iot-edge",
+				"ms-azuretools.azure-dev",
+				"ms-ossdata.vscode-postgresql",
+				"docsmsft.docs-yaml",
+				"docsmsft.docs-images",
+				"VisualStudioExptTeam.vscodeintellicode-completions",
+				"SynapseVSCode.vscode-synapse-remote",
+				"TeamsDevApp.vscode-adaptive-cards",
+				"ms-vscode.wordcount",
+				"docsmsft.docs-visual-areas",
+				"ms-toolsai.datawrangler",
+				"microsoft-IsvExpTools.powerplatform-vscode",
+				"circleci.circleci"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:1": {}
+"features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+    "ghcr.io/devcontainers/features/common-utils:1": {}
+},
+"forwardPorts": 3002
+		"ghcr.io/devcontainers/features/github-cli:1": {
+        "version": "latest"
+		"docker-in-docker": {
+			"version": "latest",
+			"moby": true,
+			"dockerDashComposeVersion": "v1"
+		    "installNode": "true",
+            "nodeVersion": "18",
+            "installPython": "true",
+            "pythonVersion": "3.10",
+            "installGit": "true",
+            "runArgs": 
+			"installZsh": "true",
+			"username": "vscode",
+			"uid": "1000",
+			"gid": "1000",
+			"upgradePackages": "false",
+			"installOhMyZsh": "true",
+			"nonFreePackages": "true"
+		
+	},
+	"postCreateCommand": "npm install -g @devcontainers/cli",
+	"remoteUser": "node"
+        }
+    },
+     "forwardPorts": 3002
+
+}
